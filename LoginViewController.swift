@@ -334,37 +334,37 @@ extension LoginViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let id = self.items[indexPath.row]
-        if let cell = self.tableView.dequeueReusableCell(withIdentifier: id){
+        if let cell = self.tableView.dequeueReusableCell(withIdentifier: id) as? LoginMenuTableViewCell{
             switch (id){
             case "contact":
-                (cell as! LoginMenuTableViewCell).titleLbl.text = "CONTACTS".localized()
+                cell.titleLbl.text = "CONTACTS".localized()
                 break
             case "checklist":
-                (cell as! LoginMenuTableViewCell).titleLbl.text = "CHECKLIST".localized()
+                cell.titleLbl.text = "CHECKLIST".localized()
                 break
             case "goldenRules":
-                (cell as! LoginMenuTableViewCell).titleLbl.text = "GOLDEN_RULES".localized()
+                cell.titleLbl.text = "GOLDEN_RULES".localized()
                 break
             case "account":
-                (cell as! LoginMenuTableViewCell).titleLbl.text = "ACCOUNT".localized()
+                cell.titleLbl.text = "ACCOUNT".localized()
                 break
             case "changeLanguage":
-                (cell as! LoginMenuTableViewCell).titleLbl.text = "CHANGE_LANGUAGE".localized()
+                cell.titleLbl.text = "CHANGE_LANGUAGE".localized()
                 break
             case "learnMore":
-                (cell as! LoginMenuTableViewCell).titleLbl.text = "LEARN_MORE".localized()
+                cell.titleLbl.text = "LEARN_MORE".localized()
                 break
             case "disclaimer":
-                (cell as! LoginMenuTableViewCell).titleLbl.text = "DISCLAIMER".localized()
+                cell.titleLbl.text = "DISCLAIMER".localized()
                 break
             case "impressum":
-                (cell as! LoginMenuTableViewCell).titleLbl.text = "IMPRESSUM".localized()
+                cell.titleLbl.text = "IMPRESSUM".localized()
                 break
             case "logout":
-                (cell as! LoginMenuTableViewCell).titleLbl.text = "LOGOUT".localized()
+                cell.titleLbl.text = "LOGOUT".localized()
                 break
             case "dynamicPage":
-                (cell as! LoginMenuTableViewCell).titleLbl.text = self.dynamicPages[indexPath.row - self.firstGroupContent.count].title
+                cell.titleLbl.text = self.dynamicPages[indexPath.row - self.firstGroupContent.count].title
                 break
             default:
                 break
