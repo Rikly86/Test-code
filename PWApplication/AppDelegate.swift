@@ -15,8 +15,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        initFonts()
+        initRouter()
+        
         return true
+    }
+    
+    func initRouter(){
+        RouteManager.sharedInstance.launch(with: window)
+    }
+    
+    func initFonts(){
+        let customFont = UIFont.boldSystemFont(ofSize: 16)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: customFont], for: .normal)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
