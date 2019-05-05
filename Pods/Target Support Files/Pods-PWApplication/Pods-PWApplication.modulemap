@@ -1,0 +1,6 @@
+framework module Pods_PWApplication {
+  umbrella header "Pods-PWApplication-umbrella.h"
+
+  export *
+  module * { export * }
+}

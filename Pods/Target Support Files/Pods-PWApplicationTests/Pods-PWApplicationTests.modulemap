@@ -1,0 +1,6 @@
+framework module Pods_PWApplicationTests {
+  umbrella header "Pods-PWApplicationTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
