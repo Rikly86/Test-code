@@ -11,7 +11,6 @@ import UIKit
 
 class TabBarViewControllerCustom:  UITabBarController{
     
-    //TODO Make filter btn
     // MARK: - Life cicle
     class func controller() -> TabBarViewControllerCustom {
         return getController(String(describing: TabBarViewControllerCustom.self)) as! TabBarViewControllerCustom

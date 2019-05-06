@@ -44,10 +44,7 @@ class RegistrationViewModel: ParentViewModelWithMessenger {
 extension RegistrationViewModel : MessengerResponseDelegate {
     func errorResponse(_ error: String?, type: String) {
         DispatchQueue.main.async(execute: {
-            //TODO
-            OperationQueue.main.addOperation {
-                SVProgressHUD.popActivity()
-            }
+            SVProgressHUD.popActivity()
             switch (type){
             case HttpParams.REGISTRATION:
                 if let err = error{

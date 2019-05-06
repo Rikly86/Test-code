@@ -56,10 +56,7 @@ class SendTransactionViewModel: ParentViewModelWithMessenger{
 extension SendTransactionViewModel : MessengerResponseDelegate {
     func errorResponse(_ error: String?, type: String) {
         DispatchQueue.main.async(execute: {
-            //TODO
-            OperationQueue.main.addOperation {
-                SVProgressHUD.popActivity()
-            }
+            SVProgressHUD.popActivity()
             switch (type){
             case HttpParams.USER_INFO:
                 break
@@ -78,9 +75,7 @@ extension SendTransactionViewModel : MessengerResponseDelegate {
             switch (type){
             case HttpParams.USER_INFO:
                 AppManager.sharedInstance.currentUserInfo = ResponseParser.userInfoParse(json)
-                OperationQueue.main.addOperation {
-                    SVProgressHUD.popActivity()
-                }
+                SVProgressHUD.popActivity()
                 self.delegateStandart?.refreshData()
                 break
             case HttpParams.USER_NEW_TRANSACTION:

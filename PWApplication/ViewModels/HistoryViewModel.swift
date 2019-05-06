@@ -71,10 +71,7 @@ extension HistoryViewModel : UITableViewDelegate {
 extension HistoryViewModel : MessengerResponseDelegate {
     func errorResponse(_ error: String?, type: String) {
         DispatchQueue.main.async(execute: {
-            //TODO
-            OperationQueue.main.addOperation {
-                SVProgressHUD.popActivity()
-            }
+            SVProgressHUD.popActivity()
             switch (type){
             case HttpParams.USER_INFO:
                 break
@@ -89,17 +86,12 @@ extension HistoryViewModel : MessengerResponseDelegate {
     
     func callBackResponse(_ json: AnyObject, type: String) {
         DispatchQueue.main.async(execute: {
-            OperationQueue.main.addOperation {
-                SVProgressHUD.popActivity()
-            }
             switch (type){
             case HttpParams.USER_INFO:
                 AppManager.sharedInstance.currentUserInfo = ResponseParser.userInfoParse(json)
                 break
             case HttpParams.USER_TRANSACTIONS:
-                OperationQueue.main.addOperation {
-                    SVProgressHUD.popActivity()
-                }
+                SVProgressHUD.popActivity()
                 self.items = ResponseParser.userTransactionsParse(json)
                 self.items.sort {
                     guard let value0 = $0.date, let value1 = $1.date else { return false }

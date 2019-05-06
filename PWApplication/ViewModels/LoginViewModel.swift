@@ -24,9 +24,7 @@ class LoginViewModel: ParentViewModelWithMessenger{
     
     //MARK: Public methods
     func sendLoginRequest(_ email:String,_ password:String){
-        OperationQueue.main.addOperation {
-            SVProgressHUD.show()
-        }
+        SVProgressHUD.show()
         let dic: [String: String] = [
             "email":  email,
             "password": password
@@ -39,10 +37,7 @@ class LoginViewModel: ParentViewModelWithMessenger{
 extension LoginViewModel : MessengerResponseDelegate {
     func errorResponse(_ error: String?, type: String) {
         DispatchQueue.main.async(execute: {
-            //TODO
-            OperationQueue.main.addOperation {
-                SVProgressHUD.popActivity()
-            }
+            SVProgressHUD.popActivity()
             switch (type){
             case HttpParams.LOGIN:
                 if let err = error{
@@ -58,9 +53,7 @@ extension LoginViewModel : MessengerResponseDelegate {
     
     func callBackResponse(_ json: AnyObject, type: String) {
         DispatchQueue.main.async(execute: {
-            OperationQueue.main.addOperation {
-                SVProgressHUD.popActivity()
-            }
+            SVProgressHUD.popActivity()
             switch (type){
             case HttpParams.LOGIN:
                 AppManager.sharedInstance.token = ResponseParser.tokenParse(json)

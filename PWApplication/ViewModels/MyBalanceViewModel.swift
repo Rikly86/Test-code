@@ -42,13 +42,11 @@ class MyBalanceViewModel: ParentViewModelWithMessenger{
     }
     
     func getUsers(_ filterBy:String){
-        OperationQueue.main.addOperation{
-            SVProgressHUD.show()
-            let dic: [String: String] = [
-                "filter":  filterBy
-                ]
+        SVProgressHUD.show()
+        let dic: [String: String] = [
+            "filter":  filterBy
+            ]
             self.mess.sendPostRequest(HttpParams.getHttpUsersList(), type: HttpParams.USERS_LIST, postData:dic)
-        }
     }
 }
 
