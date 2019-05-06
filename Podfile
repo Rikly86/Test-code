@@ -12,7 +12,6 @@ target 'PWApplication' do
     pod 'SwiftyJSON'
     pod 'Kingfisher'
     pod 'SVProgressHUD'
-    pod 'p2.OAuth2', '~> 4.2'
     
     # Pods for PWApplication
     target 'PWApplicationTests' do

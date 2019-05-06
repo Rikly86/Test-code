@@ -396,7 +396,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="History" image="History" id="zLr-0Y-ydL"/>
                     <navigationItem key="navigationItem" title="History" id="GTF-vK-Yqo">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="v7T-D5-wrW">
+                        <barButtonItem key="rightBarButtonItem"  id="v7T-D5-wrW">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uAo-gm-mWN">
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Logout">
