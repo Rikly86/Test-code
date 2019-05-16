@@ -76,7 +76,10 @@ open class ParentViewController: UIViewController {
             UIView.animate(withDuration: duration,
                            delay: TimeInterval(0),
                            options: animationCurve,
-                           animations: { self.view.layoutIfNeeded() },
+                           animations: {
+                            [weak self] in
+                            guard let strongSelf = self else { return }
+                            strongSelf.view.layoutIfNeeded() },
                            completion: nil)
         }
     }

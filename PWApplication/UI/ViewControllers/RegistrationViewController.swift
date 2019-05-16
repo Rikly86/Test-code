@@ -21,6 +21,7 @@ class RegistrationViewController: ParentViewController {
     // MARK: - Properties
     fileprivate let viewModel = RegistrationViewModel()
     
+    
     // MARK: - Life cicle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +67,7 @@ class RegistrationViewController: ParentViewController {
     
     // MARK: - Outlets methods
     @IBAction func regBtnTapped(_ sender: UIButton) {
+        
         if viewModel.isLoadingMessenger() { return }
         view.endEditing(true)
         guard let name = self.name.text, !name.isEmptyOrWhitespace() else {

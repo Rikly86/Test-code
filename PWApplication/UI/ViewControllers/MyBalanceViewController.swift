@@ -31,8 +31,9 @@ class MyBalanceViewController:  ParentViewControllerWithBalance{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.navigationItem.title = "My Balance"
-        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
-            self.view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.view.layoutIfNeeded()
         }, completion: nil)
         
     }

@@ -72,9 +72,10 @@ class LoginViewController:  ParentViewController{
     }
     
     private func animateLogo(){
-        UIView.animate(withDuration: 0.3, delay: 0.4, options: .curveEaseInOut, animations: {
-            self.logoWidthConstrain.constant = 260
-            self.logoImg.layoutIfNeeded()
+        UIView.animate(withDuration: 0.3, delay: 0.4, options: .curveEaseInOut, animations: { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.logoWidthConstrain.constant = 260
+            strongSelf.logoImg.layoutIfNeeded()
         }, completion: nil)
     }
     

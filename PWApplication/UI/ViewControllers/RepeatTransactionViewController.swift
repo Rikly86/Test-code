@@ -39,7 +39,9 @@ class RepeatTransactionViewController:  ParentViewControllerWithBalance{
         super.viewWillAppear(animated)
         self.tabBarController?.navigationItem.title = "Select User"
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseInOut, animations: {
-            self.view.layoutIfNeeded()
+            [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.view.layoutIfNeeded()
         }, completion: nil)
         
     }
